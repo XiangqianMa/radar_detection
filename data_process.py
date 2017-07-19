@@ -38,14 +38,15 @@ target3_1_box_convert = convert(size, target3_1_box)
 target3_2_box_convert = convert(size, target3_2_box)
 print(target1_box_convert, target3_1_box_convert, target3_2_box_convert)
 
+# 创建标记文件（空文件）
+image_filename = os.listdir(image_path)
+# 将样本名称抽取出来，创建同名.txt文件，用于存放标记信息
+for file in image_filename:
+    file = file.split('.')[0]
+    os.mknod(label_file_path + "/" + file + '.txt')
+
 # 写入标记文件
 filename = os.listdir(label_file_path)
-# with open(label_file_path + '/' + filename[0], 'w') as f:
-#     print(filename[0])
-#     f.write(str(1) + ' ' + str(target1_box_convert[0]) + ' ' + str(target1_box_convert[1]) + ' '
-#             + str(target1_box_convert[2]) + ' ' + str(target1_box_convert[3]) + '\n')
-#     f.write(str(2) + ' ' + str(target2_box_convert[0]) + ' ' + str(target2_box_convert[1]) + ' '
-#             + str(target2_box_convert[2]) + ' ' + str(target2_box_convert[3]))
 for file in filename:
     with open(label_file_path + '/' + file, 'w') as f:
         print(file)

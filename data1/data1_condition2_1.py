@@ -18,8 +18,9 @@ def convert(size, box):
     # 在原始标记信息中，图像宽度和图像高度是反过来的．
     width, height = size[1], size[0]
     x, y, box_width, box_height = box[0], box[1], box[2], box[3]
-    x_convert = x/width
-    y_convert = y/height
+    # voc数据集采用的是图像的中点坐标占整个图像的比例
+    x_convert = (x + box_width/2)/width
+    y_convert = (y + box_height/2)/height
     box_width_convert = box_width/width
     box_height_convert = box_height/height
     return x_convert, y_convert, box_width_convert, box_height_convert

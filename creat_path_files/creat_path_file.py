@@ -2,11 +2,11 @@ import os
 
 # 把以下路径更改为你的文件存放路径
 # 路径文件存放路径
-path_train_file = '/home/mxqian/data_convert/path_file/train'
-path_val_file = '/home/mxqian/data_convert/path_file/val'
+path_train_file = '/home/lab1/production_practice_mxq/path_file/train'
+path_val_file = '/home/lab1/production_practice_mxq/path_file/val'
 # 样本集存放路径
-data_train_path = '/home/mxqian/data_convert/data/train'
-data_val_path = '/home/mxqian/data_convert/data/val'
+data_train_path = '/home/lab1/production_practice_mxq/data/train'
+data_val_path = '/home/lab1/production_practice_mxq/data/val'
 
 # 创建训练样本的路径文件
 os.mknod(path_train_file + '/' + 'train.txt')
